@@ -25,7 +25,8 @@ const flowTranscriber = addKeyword(EVENTS.VOICE_NOTE).addAction(
         const text = await handlerAI(ctx);
         //console.log(`🤖 Fin voz a texto....[TEXT]: ${text}`);
 
-        ctxFn.flowDynamic(`🗣️ Voice Transcriber\n\n ✍️ ${text}`);
+        const appName = process.env.APP_NAME || 'Voice Transcriber';
+        ctxFn.flowDynamic(`🗣️ ${appName}\n\n ✍️ ${text}`);
     }
 );
 
